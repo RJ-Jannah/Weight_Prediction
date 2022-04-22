@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for ('static', filename='css/style.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <title>Prediksi Berat Badan</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+
+      
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          
+          <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+
+              <h2 class="mb-5">Prediksi berat Badan</h2>
+
+              <form class="border-right pr-5 mb-5" method="POST" action="">
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="Height" id="Height" placeholder="Tinggi Badan">
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="Gender" id="Gender" placeholder="Jenis Kelamin">
+                  </div>
+                </div>
+              
+                <div class="row">
+                  <div class="col-md-12">
+                    <input type="submit" value="Cek Prediksi" class="btn btn-primary rounded-0 py-2 px-4">
+                    <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+
+              <div id="form-message-warning mt-4"></div> 
+              <div id="form-message-success">
+                Sedang Prediksi...
+              </div>
+            </div>
+            {% if result is defined %}
+            <div class="col-lg-4 ml-auto">
+              <h3 class="mb-4">{{result}}</h3>
+              <p>0</p>
+              <p><a href="#">Selengkapnya</a></p>
+            </div>
+            {% endif %}
+          </div>
+        </div>  
+        </div>
+      </div>
+  </div>
+    
+    
+
+  <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/jquery.validate.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>
